@@ -133,16 +133,13 @@ public class MockGpsProviderActivity extends Activity implements LocationListene
     
 
 	/** Define a mock GPS provider as an asynchronous task of this Activity. */
-	private class MockLocationProvider extends AsyncTask<String, Integer, Void> {
+	private class MockLocationProvider extends AsyncTask<String, Void, Void> {
 		public static final String MOCK_PROVIDER = "mockLocationProvider";
 
 		@Override
 		protected Void doInBackground(String... data) {			
 			// process data
-			for (String str : data) {
-						
-				publishProgress();
-				
+			for (String str : data) {				
 				// retrieve data from the current line of text
 				Double latitude = null;
 				Double longitude = null;
